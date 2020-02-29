@@ -6,13 +6,17 @@ const errPass = document.getElementById("err-pass");
 
 const submit = document.getElementById("submit");
 
+const snackbar = document.getElementById("snackbar");
+
 function changeState(element, isVisible) {
     if (isVisible) {
-        element.style.visibility = "visible";
-        element.style.opacity = "1";
+        element.style.visibility = snackbar.style.visibility = "visible";
+        element.style.opacity = snackbar.style.opacity = "1";
+        snackbar.style.bottom = "40px";
     } else {
-        element.style.visibility = "hidden";
-        element.style.opacity = "0";
+        element.style.visibility = snackbar.style.visibility = "hidden";
+        element.style.opacity = snackbar.style.opacity = "0";
+        snackbar.style.bottom = "-40px";
     }
 }
 

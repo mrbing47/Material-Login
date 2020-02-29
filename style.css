@@ -7,12 +7,12 @@
 }
 
 body {
+    overflow: hidden;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background: linear-gradient(to right, #11998e, #38ef7d);*/
     background-color: #dfdfdf;
 }
 
@@ -47,7 +47,6 @@ input:placeholder-shown ~ label {
 
 input:focus {
     box-shadow: 16px 16px 32px 0px rgba(0, 0, 0, 0.15);
-    /*border: 2px solid #096d00;*/
     border: 1.5px solid #009f2a;
     background-color: #80fda109;
     transform: translate(-2px, -2px);
@@ -56,13 +55,11 @@ input:focus {
 input:focus ~ label {
     left: -88px;
     color: #009f2a;
-    /*color: #eee;*/
     visibility: visible;
     opacity: 1;
 }
 
 label {
-    /*color: #eee;*/
     font-weight: 700;
     position: absolute;
     top: 34px;
@@ -74,7 +71,6 @@ label {
 }
 
 a {
-    /*background-color: #006e2a;*/
     background: linear-gradient(to right, #11998e, #38ef7d);
     padding: 1em 2em;
     border-radius: 24px;
@@ -90,14 +86,37 @@ a {
 a:hover,
 a:focus {
     transform: translate(-2px, -2px);
-    /*box-shadow: 5px 5px 12px rgb(31, 189, 0);*/
     box-shadow: 5px 5px 12px #38ef7d;
     outline: none;
 }
 
 .fas {
+    transition: ease-in-out 250ms;
+    position: absolute;
+    top: 36px;
+    right: 20px;
     margin: 0px 10px;
     color: rgb(204, 4, 4);
     visibility: hidden;
     opacity: 0;
+}
+
+#snackbar {
+    position: absolute;
+
+    background-color: rgb(204, 4, 4);
+    padding: 0.5em 4em;
+    color: white;
+    border-radius: 6px;
+
+    bottom: -40px;
+    visibility: hidden;
+    opacity: 0;
+    transition: ease-in-out 250ms;
+}
+
+#snacktext {
+    width: 100%;
+    text-align: left;
+    font-family: "Oxanium";
 }
