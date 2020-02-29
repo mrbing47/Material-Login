@@ -35,6 +35,7 @@ input {
 
 input::placeholder {
     color: transparent;
+    visibility: hidden;
 }
 
 input:placeholder-shown ~ label {
@@ -49,6 +50,7 @@ input:focus {
     /*border: 2px solid #096d00;*/
     border: 1.5px solid #009f2a;
     background-color: #80fda109;
+    transform: translate(-2px, -2px);
 }
 
 input:focus ~ label {
@@ -91,4 +93,11 @@ a:focus {
     /*box-shadow: 5px 5px 12px rgb(31, 189, 0);*/
     box-shadow: 5px 5px 12px #38ef7d;
     outline: none;
+}
+
+.fas {
+    margin: 0px 10px;
+    color: rgb(204, 4, 4);
+    visibility: hidden;
+    opacity: 0;
 }
