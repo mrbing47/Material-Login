@@ -109,7 +109,7 @@ a:focus {
     color: white;
     border-radius: 6px;
 
-    bottom: 40px;
+    bottom: -40px;
 
     visibility: hidden;
     opacity: 0;
