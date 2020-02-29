@@ -121,3 +121,28 @@ a:focus {
     text-align: left;
     font-family: "Oxanium";
 }
+
+@media (max-width: 768px) {
+    input {
+        margin: 28px;
+    }
+
+    input:placeholder-shown ~ label {
+        top: 48px;
+        left: 48px;
+    }
+
+    input:focus ~ label {
+        top: 0px;
+        left: 48px;
+    }
+
+    label {
+        top: 0px;
+    }
+
+    .fas {
+        top: 48px;
+        right: 40px;
+    }
+}

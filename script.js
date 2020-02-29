@@ -13,7 +13,7 @@ function changeState(element, isVisible) {
         element.style.visibility = "visible";
         element.style.opacity = "1";
 
-        snackbar.style.bottom = "40px";
+        snackbar.style.bottom = "5%";
         snackbar.style.visibility = "visible";
         snackbar.style.opacity = "1";
     } else {
