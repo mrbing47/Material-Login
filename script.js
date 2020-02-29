@@ -10,13 +10,21 @@ const snackbar = document.getElementById("snackbar");
 
 function changeState(element, isVisible) {
     if (isVisible) {
-        element.style.visibility = snackbar.style.visibility = "visible";
-        element.style.opacity = snackbar.style.opacity = "1";
+        element.style.visibility = "visible";
+        element.style.opacity = "1";
+
         snackbar.style.bottom = "40px";
+        snackbar.style.visibility = "visible";
+        snackbar.style.opacity = "1";
     } else {
-        element.style.visibility = snackbar.style.visibility = "hidden";
-        element.style.opacity = snackbar.style.opacity = "0";
-        snackbar.style.bottom = "-40px";
+        element.style.visibility = "hidden";
+        element.style.opacity = "0";
+
+        if (errName.style.opacity === "0" && errPass.style.opacity === "0") {
+            snackbar.style.bottom = "-40px";
+            snackbar.style.visibility = "hidden";
+            snackbar.style.opacity = "0";
+        }
     }
 }
 
