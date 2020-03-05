@@ -8,25 +8,49 @@ const submit = document.getElementById("submit");
 
 const snackbar = document.getElementById("snackbar");
 
-function changeState(element, isVisible) {
-    if (isVisible) {
-        element.style.visibility = "visible";
-        element.style.opacity = "1";
+const snackbutton = document.getElementById("snackbutton");
 
+let snackbarInterval = 0;
+
+function changeSnackState(visible) {
+    if (visible) {
         snackbar.style.bottom = "5%";
         snackbar.style.visibility = "visible";
         snackbar.style.opacity = "1";
     } else {
-        element.style.visibility = "hidden";
-        element.style.opacity = "0";
-
-        if (errName.style.opacity === "0" && errPass.style.opacity === "0") {
-            snackbar.style.bottom = "-40px";
-            snackbar.style.visibility = "hidden";
-            snackbar.style.opacity = "0";
-        }
+        snackbar.style.bottom = "-40px";
+        snackbar.style.visibility = "hidden";
+        snackbar.style.opacity = "0";
     }
 }
+function changeState(element, visible) {
+    if (visible) {
+        element.style.visibility = "visible";
+        element.style.opacity = "1";
+
+        changeSnackState(visible);
+
+        if (snackbarInterval == 0) {
+            snackbarInterval = setTimeout(() => {
+                changeSnackState(false);
+                snackbarInterval = 0;
+            }, 2000);
+            console.log(snackbarInterval);
+        }
+    } else {
+        element.style.visibility = "hidden";
+        element.style.opacity = "0";
+    }
+}
+
+snackbutton.addEventListener("click", event => {
+    console.log(snackbarInterval);
+    if (snackbarInterval != 0) {
+        clearTimeout(snackbarInterval);
+        snackbarInterval = 0;
+        changeSnackState(false);
+    }
+});
 
 submit.addEventListener("click", event => {
     const input_name = username.value;
